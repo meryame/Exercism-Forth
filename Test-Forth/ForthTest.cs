@@ -27,7 +27,7 @@ namespace Test_Forth
             Assert.Throws<InvalidOperationException>(() => Forth.Evaluate(new[] { "1 +" }));
         }
         [Fact]
-        public void Subtraction_can_subtract_two_numbers()
+        public void Subtraction_can_subtract_two_number()
         {
             Assert.Equal("-1", Forth.Evaluate(new[] { "3 4 -" }));
         }
