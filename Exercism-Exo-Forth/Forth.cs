@@ -35,7 +35,7 @@ namespace Exercism_Exo_Forth
             instruction = instruction.ToLower();
             if (instruction[0] == ':')
             {
-                AddCustomInstruction(instruction);
+                AddInstruction(instruction);
                 return;
             }
             foreach (string piece in instruction.Split(' '))
@@ -50,7 +50,7 @@ namespace Exercism_Exo_Forth
                 if (Regex.IsMatch(piece, @"[^\d\W]+")) FollowInstruction(piece.ToLower());
             }
         }
-        private static void AddCustomInstruction(string instruction)
+        private static void AddInstruction(string instruction)
         {
             Match instr = Regex.Match(instruction, @"^: (?<name>[^\s\d]+) (?<value>.+);$");
             if (!instr.Success) throw new InvalidOperationException();
